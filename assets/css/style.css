@@ -1,46 +1,121 @@
+/* Global styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f9f9f9, #eef1f6);
   margin: 0;
   padding: 0;
+  color: #333;
 }
+
 .container {
   width: 90%;
   max-width: 800px;
-  margin: auto;
-  background: #fff;
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #aaa;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
+
+h1 {
+  color: #1e2a78;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333;
+  font-size: 22px;
+  margin: 15px 0 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .gallery img {
-  width: 100px;
-  margin: 5px;
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  transition: transform 0.3s ease;
 }
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Order Button */
 .order-btn {
   display: inline-block;
-  margin-top: 20px;
-  background: #28a745;
+  background: linear-gradient(to right, #ff512f, #dd2476);
   color: white;
-  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
+
+.order-btn:hover {
+  background: linear-gradient(to right, #dd2476, #ff512f);
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Input & Button */
 input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  max-width: 400px;
+  padding: 12px;
+  margin: 15px auto;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: block;
 }
+
 button {
-  padding: 10px 20px;
   background: #007bff;
   color: white;
+  font-size: 16px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Success Message */
 #result {
-  margin-top: 20px;
+  margin-top: 25px;
   color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Countdown Style */
+#countdown {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #d62828;
+  font-weight: bold;
 }
