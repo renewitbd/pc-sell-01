@@ -5,71 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🔥 অফিস, স্টুডেন্ট, হোম ইউজ – সবার জন্য বাজেট পিসি প্যাকেজ!</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Helvetica', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #e74c3c;
-      font-size: 26px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .product-images img {
-      width: 100%;
-      max-width: 250px;
-      margin: 10px;
-      border-radius: 8px;
-    }
-    .product-images {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .order-btn {
-      display: inline-block;
-      background-color: #27ae60;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .countdown {
-      font-size: 18px;
-      margin-top: 20px;
-      text-align: center;
-      color: #d35400;
-    }
-    .price {
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #2c3e50;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <h1>🔥 অফিস, স্টুডেন্ট, হোম ইউজ – সবার জন্য একদম বাজেটে সম্পূর্ণ পিসি প্যাকেজ!</h1>
 
     <div class="product-images">
+      <!-- এখানে ছবি যোগ করুন -->
       <img src="assets/images/img1.jpg" alt="PC Image 1">
       <img src="assets/images/img2.jpg" alt="PC Image 2">
       <img src="assets/images/img3.jpg" alt="PC Image 3">
@@ -92,47 +34,28 @@
       <p>📍 ঠিকানা: নিউ এলিফ্যান্ট রোড, ঢাকা</p>
       <p>🚛 হোম ডেলিভারি সার্ভিস: ঢাকা ও দেশের যেকোনো জায়গায়</p>
       <p>🔧 <strong>রিনিউ আইটি বিডি</strong> — কম্পিউটারের সব সমাধান এক জায়গায়!</p>
+
+      <p class="price">
+        💰 পিসি প্যাকেজ মূল্য: 
+        <span style="text-decoration: line-through; color: gray;">১৫,০০০ টাকা</span>
+        <span style="color: #e74c3c; font-weight: bold; font-size: 26px;">→ ১১,৯৯৯ টাকা মাত্র!</span>
+      </p>
+
+      <p class="payment-info">📲 পেমেন্ট করতে নিচের যেকোনো নাম্বারে টাকা পাঠানঃ <br>
+        📌 বিকাশ / নগদ নম্বরঃ <strong>01992490835</strong> <br>
+        💬 পেমেন্ট করার পর নিচের অর্ডার ফর্ম পূরণ করুন।
+      </p>
     </div>
 
-    <!-- প্যাকেজ মূল্য -->
-    <p class="price">💰 পিসি প্যাকেজ মূল্য: মাত্র <span style="color: #e74c3c;">১১,৯৯৯ টাকা</span></p>
-
-    <!-- পেমেন্ট নির্দেশনা -->
-    <p style="text-align: center; margin-top: 10px;">
-      🔔 অনুগ্রহ করে প্রথমে বিকাশ/নগদে টাকা পাঠান এই নাম্বারে: <strong>01992490835</strong><br>
-      তারপর নিচের বাটনে ক্লিক করে অর্ডার ফর্ম পূরণ করুন ✅
-    </p>
-
-    <!-- অর্ডার বাটন -->
-    <div style="text-align: center; margin-top: 10px;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSciqESNtP_amwPR8TTuWpqL6w506erSbIGSmuTxBPxZDmX71A/viewform" target="_blank" class="order-btn">
-        ✅ অর্ডার ফর্ম পূরণ করুন
-      </a>
+    <div class="order-section">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSciqESNtP_amwPR8TTuWpqL6w506erSbIGSmuTxBPxZDmX71A/viewform" target="_blank" class="order-btn">✅ অর্ডার করুন</a>
     </div>
 
-    <div class="countdown" id="countdown">
-      ⏳ অফার শেষ হতে: লোড হচ্ছে...
+    <div class="countdown">
+      ⏳ অফার শেষ হতে আর বাকি: <span id="timer">24:00:00</span>
     </div>
   </div>
 
-  <script>
-    const countdownEl = document.getElementById("countdown");
-    function updateCountdown() {
-      const now = new Date();
-      const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-      const diff = tomorrow - now;
-
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `⏳ অফার শেষ হতে: ${hours} ঘন্টা ${mins} মিনিট ${secs} সেকেন্ড বাকি`;
-
-      if (diff <= 0) {
-        countdownEl.innerHTML = "⏰ অফার শেষ!";
-      }
-    }
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="assets/js/countdown.js"></script>
 </body>
 </html>
