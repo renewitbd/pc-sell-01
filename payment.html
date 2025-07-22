@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment - Renew IT BD</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💳 Payment Instructions</h1>
+    <p>📱 Bkash/Nagad Number: <strong>01992490835</strong></p>
+    <p>💸 Sent money করুন, তারপর নিচে আপনার Transaction ID দিন:</p>
+    <input type="text" id="trxid" placeholder="Transaction ID লিখুন">
+    <button onclick="submitPayment()">Confirm Order</button>
+    
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function submitPayment() {
+      const trxid = document.getElementById("trxid").value;
+      if (trxid.trim() === "") {
+        alert("দয়া করে একটি ট্রানজেকশন আইডি লিখুন।");
+        return;
+      }
+      document.getElementById("result").innerHTML = `
+        <h2>✅ অর্ডার প্লেস হয়েছে!</h2>
+        <p>আপনার ট্রানজেকশন যাচাই করে আমাদের টিম শীঘ্রই আপনার সাথে যোগাযোগ করবে।</p>
+        <p>ধন্যবাদ “Renew IT BD” বেছে নেওয়ার জন্য।</p>
+      `;
+    }
+  </script>
+</body>
+</html>
